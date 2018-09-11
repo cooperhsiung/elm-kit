@@ -1,0 +1,19 @@
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  entry: "./dist/elm.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
+  },
+  resolve: {
+    extensions: [".js", ".elm"]
+  },
+  module: {
+    rules: [{ test: /\.txt$/, use: "raw-loader" }]
+  },
+  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+  mode: "production"
+};
