@@ -34,7 +34,7 @@ elm reactor (deprecated, [reasons...](https://github.com/elm-lang/elm-reactor))
 npm run view
 ```
 
-### TODO
+## TODO
 
 - add css task
 - ex...
@@ -44,6 +44,6 @@ npm run view
 [gulp-image]: https://img.shields.io/badge/gulp-v4.0-d25151.svg
 [gulp-url]: https://gulpjs.com/
 
-### License
+## License
 
 MIT
