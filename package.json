@@ -5,10 +5,9 @@
   "private": true,
   "main": "elm.js",
   "scripts": {
-    "start": "npm run make&&webpack-dev-server --port=3000",
+    "start": "gulp",
     "make": "elm make ./src/Main.elm --optimize --output=./dist/elm.js",
-    "build": "npm run make&&webpack",
-    "webpack": "webpack",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,16 +18,11 @@
   "author": "Cooper Hsiung",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^2.24.7",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.18.0",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
-  },
-  "dependencies": {
-    "elm-webpack-loader": "^5.0.0"
+    "gulp-connect": "^5.6.1",
+    "gulp-uglify": "^3.0.1"
   }
 }

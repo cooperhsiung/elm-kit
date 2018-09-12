@@ -1,15 +1,30 @@
-var gulp = require("gulp");
-var concat = require("gulp-concat");
-var uglify = require("gulp-uglify");
-var del = require("del");
-var exec = require("child_process").exec;
+const del = require("del");
+const gulp = require("gulp");
+const concat = require("gulp-concat");
+const uglify = require("gulp-uglify");
+const browserSync = require("browser-sync");
+const exec = require("child_process").exec;
 
-gulp.task("clean", function(cb) {
-  del(["public/bundle.js", "dist/elm.js"]).then(() => cb());
+gulp.task("server", function(done) {
+  browserSync.init(
+    {
+      server: {
+        baseDir: "public",
+        index: "index.html"
+      },
+      ui: false,
+      notify: false
+    },
+    done
+  );
+});
+
+gulp.task("clean", function(done) {
+  del(["public/bundle.js", "dist/elm.js"]).then(() => done());
 });
 
 const MAKE_CMD = "elm make ./src/Main.elm --optimize --output=./dist/elm.js";
-gulp.task("make", function(cb) {
+gulp.task("make", function(done) {
   exec(MAKE_CMD, function(err, stdout, stderr) {
     if (stdout) {
       console.log(
@@ -25,7 +40,7 @@ gulp.task("make", function(cb) {
         )} module.`
       );
     }
-    cb(err);
+    done(err);
   });
 });
 
@@ -37,8 +52,12 @@ gulp.task("js", function() {
     .pipe(gulp.dest("public"));
 });
 
-gulp.task('watch', function() {
-   gulp.watch('src/*.elm',gulp.series( "make", "js"))
+gulp.task("watch", function() {
+  gulp
+    .watch("src/*.elm", gulp.series("make", "js"))
+    .on("change", browserSync.reload);
 });
 
-gulp.task("default", gulp.series("clean", "make", "js","watch"));
+gulp.task("build", gulp.series("clean", "make", "js"));
+
+gulp.task("default", gulp.series("server", "clean", "make", "js", "watch"));
