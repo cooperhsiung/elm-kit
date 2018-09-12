@@ -8,7 +8,7 @@ import Html.Events exposing (onClick)
 
 main =
   -- Browser.sandbox { init = 0, update = update, view = view }
-  text "Hello world!"
+  text "Hello world 12345!"
 
 type Msg = Increment | Decrement
 
