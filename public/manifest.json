@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Elm Kit",
+  "name": "Elm app boilplate",
   "icons": [
     {
       "src": "favicon.ico",
