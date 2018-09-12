@@ -6,9 +6,9 @@
   "main": "elm.js",
   "scripts": {
     "start": "gulp",
-    "make": "elm make ./src/Main.elm --optimize --output=./dist/elm.js",
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "view": "elm reactor"
   },
   "keywords": [
     "elm",

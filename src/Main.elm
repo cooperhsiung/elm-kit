@@ -1,28 +1,15 @@
+-- This is how you declare what your module name is and what values to export.
+-- We've chosen to name our module Main and we are exporting all of the
+-- module's values.
 module Main exposing (..)
 
-import Browser
+-- We're importing the Html module and we're making the Html and text values
+-- global to our file, so we can just reference them as Html and text if we want.
+import Html exposing (Html, text)
 
-import Browser.Dom as Dom
-import Html exposing (Html, button, div, text)
-import Html.Events exposing (onClick)
 
+-- The main value manages what gets displayed on the page. If we set the main
+-- value to (text "Hello, World!"), then a text node with the string "Hello, World!"
+-- will display on the page.
 main =
-  -- Browser.sandbox { init = 0, update = update, view = view }
-  text "Hello world 123458900!"
-
-type Msg = Increment | Decrement
-
-update msg model =
-  case msg of
-    Increment ->
-      model + 1
-
-    Decrement ->
-      model - 1
-
-view model =
-  div []
-    [ button [ onClick Decrement ] [ text "-" ]
-    , div [] [ text (String.fromInt model) ]
-    , button [ onClick Increment ] [ text "+" ]
-    ]
+    text "Hello, World!"
