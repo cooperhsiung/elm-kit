@@ -28,13 +28,13 @@ build for deployment
 npm run build
 ```
 
-elm reactor (deprecated, [reasons...](https://github.com/elm-lang/elm-reactor))
+elm reactor
 
 ```bash
 npm run view
 ```
 
-## TODO
+## Todo
 
 - add css task
 - ex...
