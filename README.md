@@ -3,7 +3,7 @@
 [![Elm Version][elm-image]][elm-url]
 [![Gulp Version][gulp-image]][gulp-url]
 
-[Elm](https://elm-lang.org/) app boilplate.
+[Elm](https://elm-lang.org/) app boilerplate.
 
 ## Setup
 

@@ -1,7 +1,7 @@
 {
   "name": "elm-kit",
   "version": "1.0.0",
-  "description": "Elm app boilplate",
+  "description": "Elm app boilerplate",
   "private": true,
   "main": "elm.js",
   "scripts": {
